@@ -8,7 +8,7 @@ const StaffCard = ({ singleStaff }) => {
     useEffect(() => {
         const fetchData = () => {
             // local host api link
-            fetch(`http://51.68.234.157:20206/api/status/${id}`)
+            fetch(`https://51.68.234.157:20206/api/status/${id}`)
                 .then(res => res.json())
                 .then(res => {
                     if (res.success) setDiscordData(res.data);
