@@ -8,7 +8,9 @@ export default async function handler(req, res) {
     );
 
     const data = await response.json();
-    res.status(200).json(data);
+
+    // React কম্পোনেন্টের জন্য success:true সহ রিটার্ন
+    res.status(200).json({ success: true, data });
   } catch (error) {
     res.status(500).json({
       success: false,
