@@ -1,0 +1,79 @@
+[
+  {
+    "serialNo": 1,
+    "name": "Naruto",
+    "id": "377333742987116546",
+    "role": "Team Member",
+    "description": "Managing the core development and server architecture."
+  },
+  {
+    "serialNo": 2,
+    "name": "Shohag",
+    "id": "784463788707020821",
+    "role": "Team Member",
+    "description": "Responsible for community management and security."
+  },
+  {
+    "serialNo": 3,
+    "name": "Arafat Vai",
+    "id": "524974160959635497",
+    "role": "Team Member",
+    "description": "Ensuring a safe and friendly environment for all members."
+  },
+  {
+    "serialNo": 4,
+    "name": "Raiyan",
+    "id": "913020151459360798",
+    "role": "Team Member",
+    "description": "Organizing fun games, tournaments, and community events."
+  },
+  {
+    "serialNo": 5,
+    "name": "Ontor Vai",
+    "id": "294796542479564800",
+    "role": "Team Member",
+    "description": "Always available to help with user queries and issues."
+  },
+  {
+    "serialNo": 6,
+    "name": "Naimur Vai",
+    "id": "477362386530205726",
+    "role": "Team Member",
+    "description": "Always available to help with user queries and issues."
+  },
+  {
+    "serialNo": 7,
+    "name": "Marowan Vai",
+    "id": "702448948287242250",
+    "role": "Team Member",
+    "description": "Always available to help with user queries and issues."
+  },
+  {
+    "serialNo": 8,
+    "name": "Murgi Vai",
+    "id": "1280113674367012876",
+    "role": "Team Member",
+    "description": "Always available to help with user queries and issues."
+  },
+  {
+    "serialNo": 9,
+    "name": "Red Vai",
+    "id": "889719329233469481",
+    "role": "Team Member",
+    "description": "Always available to help with user queries and issues."
+  },
+  {
+    "serialNo": 10,
+    "name": "Lucifer Vai",
+    "id": "916266269936857129",
+    "role": "Team Member",
+    "description": "Always available to help with user queries and issues."
+  },
+  {
+    "serialNo": 11,
+    "name": "Waleed Vai",
+    "id": "693875294188339332",
+    "role": "Team Member",
+    "description": "Always available to help with user queries and issues."
+  }
+]

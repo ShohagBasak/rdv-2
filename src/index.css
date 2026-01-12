@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  themes: light --default;
+}
+
+* {
+  font-family: "Manrope", sans-serif;
+}
+
+.glow-text {
+  animation: glow 2s ease-in-out infinite;
+  text-shadow: 0 0 5px #ef4444, 0 0 10px #ef4444, 0 0 15px #fdba74;
+}
+
+@keyframes glow {
+
+  0%,
+  100% {
+    text-shadow: 0 0 5px #ef4444, 0 0 10px #ef4444, 0 0 15px #ef4444;
+  }
+
+  50% {
+    text-shadow: 0 0 10px #ef4444, 0 0 20px #ef4444, 0 0 30px #ef4444;
+  }
+}
+
+.swiper-wrapper {
+  transition-timing-function: linear !important;
+}
