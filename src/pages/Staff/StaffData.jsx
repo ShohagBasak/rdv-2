@@ -24,12 +24,14 @@ const StaffData = () => {
                     effect="coverflow"
                     grabCursor={true}
                     centeredSlides={true}
+                    className="overflow-visible"
                     slidesPerView={5}
                     spaceBetween={-40}
                     loop={true}
                     autoplay={{
                         delay: 1000,
                         disableOnInteraction: false,
+                        pauseOnMouseEnter: true
                     }}
                     coverflowEffect={{
                         rotate: 45,
@@ -48,8 +50,8 @@ const StaffData = () => {
                 >
                     {
                         data.map(singleStaff =>
-                            <SwiperSlide className='w-[260px] transition-all duration-300'>
-                                <StaffCard key={singleStaff.serialNo} singleStaff={singleStaff}></StaffCard>
+                            <SwiperSlide key={singleStaff.serialNo} className='w-[260px] transition-all duration-300'>
+                                <StaffCard singleStaff={singleStaff}></StaffCard>
                             </SwiperSlide>
                         )}
                 </Swiper>

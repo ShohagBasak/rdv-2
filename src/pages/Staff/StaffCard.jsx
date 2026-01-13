@@ -58,7 +58,7 @@ const StaffCard = ({ singleStaff }) => {
     };
 
     return (
-        <div className="p-[2px] rounded-2xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:scale-105
+        <div className="m-4 my-5 p-[2px] rounded-2xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:scale-105
                     transition-all duration-300">
 
             {/* Original Card */}
