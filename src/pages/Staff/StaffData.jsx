@@ -28,6 +28,7 @@ const StaffData = () => {
                     slidesPerView={5}
                     spaceBetween={-40}
                     loop={true}
+                    speed={1000}
                     autoplay={{
                         delay: 1000,
                         disableOnInteraction: false,
