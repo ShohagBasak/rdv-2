@@ -3,6 +3,7 @@ import Root from "../pages/Root/Root";
 import Home from "../pages/Home/Home";
 import Features from "../pages/Features/Features";
 import StaffData from "../pages/Staff/StaffData";
+import TeamData from "../pages/Staff/TeamData";
 
 export const router = createBrowserRouter([
     {
@@ -11,7 +12,8 @@ export const router = createBrowserRouter([
         children:[
             {
                 index: true,
-                Component: Home
+                Component: Home,
+                loader: () => fetch('/dc.json')
             },
             {
                 path: 'feature',
@@ -19,7 +21,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'Staff',
-                Component: StaffData,
+                Component: TeamData,
                 loader: () => fetch('/dc.json')
             }
         ]

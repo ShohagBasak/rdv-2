@@ -24,7 +24,7 @@ const Footer = () => {
                 </div>
             </div>
             <aside>
-                <p className='text-base-300'>Copyright © From 2018 to {new Date().getFullYear()} - Modified by Shohag</p>
+                <p className='text-gray-400'>Copyright © From 2018 to {new Date().getFullYear()} - Developed by <span className='text-blue-400'>Shohag</span></p>
             </aside>
         </footer>
     );

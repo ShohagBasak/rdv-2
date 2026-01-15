@@ -3,7 +3,7 @@ import Loading from '../Loading';
 
 const StaffCard = ({ singleStaff }) => {
     const [discordData, setDiscordData] = useState(null);
-    const { id, role, description } = singleStaff;
+    const { id } = singleStaff;
 
     useEffect(() => {
         const fetchData = () => {
@@ -58,11 +58,11 @@ const StaffCard = ({ singleStaff }) => {
     };
 
     return (
-        <div className="my-5 p-[2px] rounded-2xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:scale-105
+        <div className="my-5 rounded-2xl hover:scale-105
                     transition-all duration-300">
 
             {/* Original Card */}
-            <div className="card p-4 w-full bg-[#1a1c2e] text-white shadow-2xl
+            <div className="card p-4 w-full text-white 
                         rounded-2xl transform  transition-all duration-300">
 
                 <figure className="px-10 py-10 relative">
@@ -91,20 +91,10 @@ const StaffCard = ({ singleStaff }) => {
                     <p className="text-gray-400 text-sm mt-[-10px]">
                         @{username}
                     </p>
-
-                    <div className="badge badge-primary badge-outline font-bold mt-2 px-4 py-3">
-                        {role}
-                    </div>
-
-                    <p className="text-sm text-gray-300 my-2">
-                        {description}
-                    </p>
-
-                    <div className="card-actions justify-center mt-4 w-full border-t border-gray-700 pt-4">
+                    <div className="card-actions justify-center mt-4 w-full pt-4">
                         <div className={`badge ${statusClass[status]} gap-2 p-3 font-semibold capitalize`}>
                             {status}
                         </div>
-
                         <div className="badge badge-outline p-3 opacity-70">
                             {getStatusText()}
                         </div>
