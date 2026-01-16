@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../../components/Header/Header';
 import { Outlet } from 'react-router';
 import Footer from '../../components/Footer/Footer';
+import TitleManager from '../../components/TitleManager/TitleManger';
 
 const Root = () => {
     return (
@@ -10,6 +11,7 @@ const Root = () => {
                 <Header></Header>
             </header>
             <main>
+                <TitleManager/>
                 <Outlet></Outlet>
             </main>
             <footer>
