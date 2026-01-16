@@ -28,7 +28,8 @@ const AboutUs = () => {
                         
                         {/* Column 1 */}
                         <div className="flex flex-col gap-5">
-                            <div tabIndex={0} className="collapse collapse-arrow bg-blue-950 border-2 border-blue-700">
+                            <div className="collapse collapse-arrow bg-blue-950 border-2 border-blue-700">
+                                <input type="checkbox"/>
                                 <div className="collapse-title flex items-center gap-3 font-bold text-xl text-white">
                                     <img className="w-8 h-8" src={eco} alt="eco" /> Economy System
                                 </div>
@@ -37,7 +38,8 @@ const AboutUs = () => {
                                 </div>
                             </div>
 
-                            <div tabIndex={0} className="collapse collapse-arrow bg-blue-950 border-2 border-blue-700">
+                            <div className="collapse collapse-arrow bg-blue-950 border-2 border-blue-700">
+                                <input type="checkbox"/>
                                 <div className="collapse-title flex items-center gap-3 font-bold text-xl text-white">
                                     <img className="w-8 h-8" src={bot} alt="bot"/> Fun game bots
                                 </div>
@@ -49,7 +51,8 @@ const AboutUs = () => {
 
                         {/* Column 2 */}
                         <div className="flex flex-col gap-5">
-                            <div tabIndex={0} className="collapse collapse-arrow bg-blue-950 border-2 border-blue-700">
+                            <div className="collapse collapse-arrow bg-blue-950 border-2 border-blue-700">
+                                <input type="checkbox"/>
                                 <div className="collapse-title flex items-center gap-3 font-bold text-xl text-white">
                                     <img className="w-8 h-8" src={vc} alt="vc" /> 24/7 VC
                                 </div>
@@ -58,7 +61,8 @@ const AboutUs = () => {
                                 </div>
                             </div>
 
-                            <div tabIndex={0} className="collapse collapse-arrow bg-blue-950 border-2 border-blue-700">
+                            <div className="collapse collapse-arrow bg-blue-950 border-2 border-blue-700">
+                                <input type="checkbox"/>
                                 <div className="collapse-title flex items-center gap-3 font-bold text-xl text-white">
                                     <img className="w-8 h-8" src={game} alt="game" /> Events & Games
                                 </div>
