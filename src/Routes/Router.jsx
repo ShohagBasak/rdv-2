@@ -19,7 +19,7 @@ export const router = createBrowserRouter([
                 Component: Features
             },
             {
-                path: '/Staff',
+                path: '/staff',
                 Component: TeamData,
                 loader: () => fetch('/dc.json')
             }
