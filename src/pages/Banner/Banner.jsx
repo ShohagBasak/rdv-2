@@ -1,6 +1,7 @@
 import React from 'react';
 import bannerImg from '../../assets/banner_rimels_discord_website_2.png'
 
+
 const Banner = () => {
     return (
         <section class="md:container mx-auto py-10">

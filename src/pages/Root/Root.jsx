@@ -5,6 +5,7 @@ import Footer from '../../components/Footer/Footer';
 import TitleManager from '../../components/TitleManager/TitleManger';
 
 const Root = () => {
+
     return (
         <div>
             <header>

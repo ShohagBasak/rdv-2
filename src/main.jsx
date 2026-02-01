@@ -6,7 +6,9 @@ import { RouterProvider } from 'react-router'
 import { router } from './Routes/Router.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <RouterProvider router={router}/>
+  <StrictMode className="scroll-smooth">
+    <div className='scroll-smooth'>
+      <RouterProvider router={router} />
+    </div>
   </StrictMode>,
 )

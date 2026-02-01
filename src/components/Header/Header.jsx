@@ -6,6 +6,7 @@ const Header = () => {
     const links = <>
         <li className='hover:bg-transparent hover:text-gray-400 text-white text-[16px]'><NavLink to={'/'}>Home</NavLink></li>
         <li className='hover:bg-transparent hover:text-gray-400 text-white text-[16px]'><NavLink to={'/feature'}>Features</NavLink></li>
+        <li className='hover:bg-transparent hover:text-gray-400 text-white text-[16px]'><NavLink to={'/minecraft'}>Minecraft</NavLink></li>
         <li className='hover:bg-transparent hover:text-gray-400 text-white text-[16px]'><NavLink to={'/staff'}>Staff</NavLink></li>
         <li className='text-[16px] font-bold text-transparent! bg-clip-text bg-gradient-to-r from-red-700 to-red-600 hover:bg-transparent hover:text-gray-400 glow-text'><a href='https://dyno.gg/form/5db81043' target='_blank'>Ban Appeal</a></li>
     </>
