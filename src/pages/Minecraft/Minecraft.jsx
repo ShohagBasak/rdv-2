@@ -122,7 +122,7 @@ const Minecraft = () => {
                     {[1, 2, 3, 4, 5].map(v => (
                         <motion.div key={v} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
                             <Link
-                                to={`/vote/${v}`}
+                                to={`/minecraft/vote/${v}`}
                                 target='_blank'
                                 className="btn rounded-full bg-blue-950 hover:bg-blue-800 text-white border-2 border-blue-700 font-extrabold capitalize"
                             >

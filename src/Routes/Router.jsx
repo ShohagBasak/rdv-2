@@ -30,7 +30,7 @@ export const router = createBrowserRouter([
                 loader: () => fetch('/dc.json')
             },
             {
-                path: '/vote/:id',
+                path: 'minecraft/vote/:id',
                 Component: VoteRedirect
             }
         ]
