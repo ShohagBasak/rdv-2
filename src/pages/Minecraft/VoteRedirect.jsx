@@ -27,8 +27,6 @@ const VoteRedirect = () => {
             "1": "https://minecraft-mp.com/server/353711/vote/",
             "2": "https://minecraft-serverlist.com/server/4231",
             "3": "https://topminecraftservers.org/vote/42692",
-            "4": "",
-            "5": "",
         };
 
         useEffect(() => {
