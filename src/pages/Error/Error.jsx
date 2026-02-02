@@ -5,7 +5,7 @@ import pnf from '../../assets/lottie asstes/Page Not Found 404.json'
 const Error = () => {
     return (
         <div className='flex items-center justify-center min-h-screen'>
-            <Lottie animationData={pnf} loop:true></Lottie>
+            <Lottie animationData={pnf} loop={true} autoplay={true}></Lottie>
         </div>
     );
 };
