@@ -12,7 +12,7 @@ const Root = () => {
                 <Header></Header>
             </header>
             <main>
-                <TitleManager/>
+                <TitleManager />
                 <Outlet></Outlet>
             </main>
             <footer>

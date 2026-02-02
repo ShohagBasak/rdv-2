@@ -9,7 +9,7 @@ export default function TitleManager() {
       "/": "Home",
       "/feature": "Features",
       "/staff": "TeamData",
-      "/minecraft": "Minecraft"
+      "/minecraft": "Minecraft",
     };
 
     const currentTitle = routeTitles[location.pathname] || "Page";

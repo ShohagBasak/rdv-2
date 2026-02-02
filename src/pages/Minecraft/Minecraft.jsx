@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion, useScroll } from "motion/react";
 import { Link } from 'react-router';
-import jsmc from '../../assets/minecraft/Java.png';
-import bdmc from '../../assets/minecraft/bedrock.png';
-import mcBg from '../../assets/minecraft/logo_1.png';
+import jsmc from '../../assets/minecraft/grass_400px.png';
+import bdmc from '../../assets/minecraft/bedrock_400px.png';
+import mcBg from '../../assets/minecraft/logo_1_400px.png';
+import "./GTE/gradientText.css";
 
 const Minecraft = () => {
     const [copied, setCopied] = useState("");
@@ -15,27 +16,31 @@ const Minecraft = () => {
     };
 
     return (
-        <div className='max-w-11/12 pt-10 mx-auto min-h-screen' style={{ scaleX: scrollYProgress }}>
-            <div className="flex flex-col md:flex-row items-start md:items-end justify-center gap-10 p-5">
+        <div className='max-w-11/12 pt-20 mx-auto min-h-screen' style={{ scaleX: scrollYProgress }}>
+            <div className="flex flex-col md:flex-row items-start md:items-end justify-center gap-5 p-5">
                 {/* LEFT */}
-                <div>
-                    <img className='rounded-2xl mt-0 md:mt-18 mx-auto mb-5 w-[200px]' src={mcBg} alt="Minecraft Banner" />
+                <div className="mx-auto md:mx-0 w-fit">
+                    <motion.img
+                        src={mcBg}
+                        alt="Minecraft Banner"
+                        className="rounded-2xl mt-0 md:mt-18
+                   w-[160px] sm:w-[180px] md:w-[200px]
+                   select-none"
+                        animate={{ y: [0, -15, 0] }}
+                        transition={{
+                            duration: 3,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                        }}
+                    />
                 </div>
                 {/* RIGHT */}
                 <div className=' mb-5 '>
-                    <motion.h1
-                        animate={{
-                            color: [
-                                'oklch(70.7% 0.165 254.624)',
-                                'oklch(62.7% 0.265 303.9)',
-                                'oklch(63.7% 0.237 25.331)'
-                            ],
-                            transition: { duration: 4, repeat: Infinity }
-                        }}
-                        className="text-2xl md:text-4xl font-extrabold mb-4"
+                    <h1
+                        className="text-2xl md:text-4xl font-extrabold mb-4 bg-linear-to-r from-blue-400 via-purple-500 to-red-500 bg-clip-text text-transparent gradient-animate-text "
                     >
                         Survival Minecraft Server
-                    </motion.h1>
+                    </h1>
 
                     <p className="text-base-200 max-w-[500px] mb-6">
                         A friendly survival Minecraft server with QoL, Bedrock crossplay,
@@ -56,10 +61,10 @@ const Minecraft = () => {
                     {/* JAVA */}
                     <div
                         onClick={() => copyText("tiger.qbitnode.com:5400")}
-                        className='flex items-center flex-col md:flex-row gap-3 cursor-pointer p-3 hover:bg-black/30 rounded-xl transition'
+                        className='flex items-center flex-row gap-3 cursor-pointer p-3 hover:bg-black/30 rounded-xl transition'
                     >
                         <motion.div whileHover={{ scale: 1.1 }} className='w-10 rounded-2xl'>
-                            <img className='rounded-2xl w-[50px]' src={jsmc} alt="Java" />
+                            <img className='rounded-2xl' src={jsmc} alt="Java" />
                         </motion.div>
 
                         <div>
@@ -69,7 +74,7 @@ const Minecraft = () => {
                                 </span>
                                 <br />
                                 <span className='text-blue-500'>
-                                tiger.qbitnode.com:5400
+                                    tiger.qbitnode.com:5400
                                 </span>
                                 <br />
                                 {copied === "tiger.qbitnode.com:5400" && (
@@ -83,10 +88,10 @@ const Minecraft = () => {
                     {/* BEDROCK */}
                     <div
                         onClick={() => copyText("tiger.qbitnode.com:5533")}
-                        className='flex items-center flex-col md:flex-row gap-3 p-3 cursor-pointer hover:bg-black/30 rounded-xl transition'
+                        className='flex items-center flex-row gap-3 p-3 cursor-pointer hover:bg-black/30 rounded-xl transition'
                     >
                         <motion.div whileHover={{ scale: 1.1 }} className='w-10 rounded-2xl'>
-                            <img className='rounded-2xl w-[50px]' src={bdmc} alt="Bedrock" />
+                            <img className='rounded-2xl' src={bdmc} alt="Bedrock" />
                         </motion.div>
                         <div>
                             <p className='text-base-200 font-mono'>
