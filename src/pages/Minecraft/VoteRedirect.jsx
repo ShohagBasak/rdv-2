@@ -3,13 +3,14 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 import lottieBilai from "../../assets/lottie asstes/Cat playing animation.json";
 import { useParams } from "react-router";
+import Error from "../Error/Error";
 
 const VoteRedirect = () => {
     const { voteId } = useParams();
     const id = voteId?.replace("vote", "");
     const timerRef = useRef(null);
     const intervalRef = useRef(null);
-    
+
         useEffect(()=>{
             if(voteId === "vote"){
                 window.location.replace("/minecraft");
@@ -26,12 +27,12 @@ const VoteRedirect = () => {
             "1": "https://minecraft-mp.com/server/353711/vote/",
             "2": "https://minecraft-serverlist.com/server/4231",
             "3": "https://topminecraftservers.org/vote/42692",
-            "4": "https://minecraft-serverlist.com/server/4231",
-            "5": "https://minecraft-mp.com/server/353711/vote/",
+            "4": "",
+            "5": "",
         };
 
         useEffect(() => {
-            if (!links[id]) return;
+            if (!links[id]) return <Error/>;
 
             // live countdown
             intervalRef.current = setInterval(() => {
