@@ -26,14 +26,14 @@ const VoteRedirect = () => {
 
     const isValidVote = Boolean(links[id]);
 
-    // 🔁 /vote → /minecraft
+
     useEffect(() => {
         if (voteId === "vote") {
             window.location.replace("/minecraft");
         }
     }, [voteId]);
 
-    // ⏳ countdown + redirect (only valid votes)
+    
     useEffect(() => {
         if (!isValidVote) return;
 
@@ -57,7 +57,7 @@ const VoteRedirect = () => {
         window.location.href = links[id];
     };
 
-    // ❌ Invalid vote → Error page
+    
     if (!isValidVote) {
         return <Error />;
     }

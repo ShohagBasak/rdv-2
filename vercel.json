@@ -1,5 +1,6 @@
 {
   "rewrites": [
+    { "src": "/minecraft", "dest": "/minecraft.html" },
     {
       "source": "/(.*)",
       "destination": "/index.html"
