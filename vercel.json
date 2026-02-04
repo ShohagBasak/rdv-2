@@ -1,9 +1,12 @@
 {
-  "rewrites": [
-    { "src": "/minecraft", "dest": "/minecraft.html" },
+  "routes": [
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "src": "^/minecraft$",
+      "dest": "/minecraft.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/"
     }
   ]
 }
