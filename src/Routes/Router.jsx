@@ -26,7 +26,7 @@ export const router = createBrowserRouter([
           },
           {
             path: 'minecraft',
-            Component: Minecraft
+            Component: Minecraft,
           },
           {
             path: 'staff',

@@ -5,18 +5,20 @@ import jsmc from '../../assets/minecraft/grass_400px.png';
 import bdmc from '../../assets/minecraft/bedrock_400px.png';
 import mcBg from '../../assets/minecraft/logo_1_400px.png';
 import "./GTE/gradientText.css";
+import MinecraftStatus from './MinecraftStatus';
+import mcbg1 from "../../assets/minecraft/mcbg21.jpg";
 
 const Minecraft = () => {
-    const [copied, setCopied] = useState("");
+    // const [copied, setCopied] = useState("");
     const { scrollYProgress } = useScroll()
-    const copyText = async (text) => {
-        await navigator.clipboard.writeText(text);
-        setCopied(text);
-        setTimeout(() => setCopied(""), 1500);
-    };
+    // const copyText = async (text) => {
+    //     await navigator.clipboard.writeText(text);
+    //     setCopied(text);
+    //     setTimeout(() => setCopied(""), 1500);
+    // };
 
     return (
-        <div className='max-w-11/12 pt-20 mx-auto min-h-screen' style={{ scaleX: scrollYProgress }}>
+        <div className='max-w-11/12 pt-20 mx-auto pb-5 min-h-screen' style={{ scaleX: scrollYProgress }}>
             <div className="flex flex-col md:flex-row items-start md:items-end justify-center gap-5 p-5">
                 {/* LEFT */}
                 <div className="mx-auto md:mx-0 w-fit">
@@ -56,61 +58,10 @@ const Minecraft = () => {
                     </motion.button> */}
                 </div>
             </div>
-            <div className='flex items-center flex-col md:flex-row justify-center gap-4 max-w-4/12 mx-auto mb-10'>
-                <div className='shadow-2xl rounded-2xl bg-black/100'>
-                    {/* JAVA */}
-                    <div
-                        onClick={() => copyText("tiger.qbitnode.com:5400")}
-                        className='flex items-center flex-row gap-3 cursor-pointer p-3 hover:bg-black/30 rounded-xl transition'
-                    >
-                        <motion.div whileHover={{ scale: 1.1 }} className='w-10 rounded-2xl'>
-                            <img className='rounded-2xl' src={jsmc} alt="Java" />
-                        </motion.div>
-
-                        <div>
-                            <p className='text-base-200 font-mono'>
-                                <span className='font-bold bg-black/100'>
-                                    Java IP (click to copy)
-                                </span>
-                                <br />
-                                <span className='text-blue-500'>
-                                    tiger.qbitnode.com:5400
-                                </span>
-                                <br />
-                                {copied === "tiger.qbitnode.com:5400" && (
-                                    <span className="ml-2 text-green-400 text-sm">IP was successfully copied!</span>
-                                )}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div className='shadow-2xl text-start bg-black/100 rounded-2xl'>
-                    {/* BEDROCK */}
-                    <div
-                        onClick={() => copyText("tiger.qbitnode.com:5533")}
-                        className='flex items-center flex-row gap-3 p-3 cursor-pointer hover:bg-black/30 rounded-xl transition'
-                    >
-                        <motion.div whileHover={{ scale: 1.1 }} className='w-10 rounded-2xl'>
-                            <img className='rounded-2xl' src={bdmc} alt="Bedrock" />
-                        </motion.div>
-                        <div>
-                            <p className='text-base-200 font-mono'>
-                                <span className='text-[14px] font-bold'>
-                                    Bedrock IP (click to copy)
-                                </span>
-                                <br />
-                                <span className='text-blue-500'>
-                                    tiger.qbitnode.com:5533
-                                </span>
-                                <br />
-                                {copied === "tiger.qbitnode.com:5533" && (
-                                    <span className="ml-2 text-green-400 text-sm">IP was successfully copied!</span>
-                                )}
-                            </p>
-                        </div>
-                    </div>
-                </div>
+            <div className='flex justify-center my-5'>
+                <MinecraftStatus></MinecraftStatus>
             </div>
+            
             {/* VOTE */}
             <div className='text-center'>
                 <h2 className='text-4xl font-bold text-base-200 mb-3'>Vote Links</h2>
