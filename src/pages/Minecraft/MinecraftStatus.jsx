@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import mcbg from "../../assets/minecraft/mcbg21.jpg";
-import jsmc from '../../assets/minecraft/grass_400px.png';
-import bdmc from '../../assets/minecraft/bedrock_400px.png';
+// import jsmc from '../../assets/minecraft/grass_400px.png';
+// import bdmc from '../../assets/minecraft/bedrock_400px.png';
 import { motion } from "motion/react";
 import { FaArrowRight } from "react-icons/fa";
 
@@ -18,8 +18,8 @@ const MinecraftStatus = () => {
 
     useEffect(() => {
         Promise.all([
-            fetch("https://api.mcsrvstat.us/2/tiger.qbitnode.com:5400").then(r => r.json()),
-            fetch("https://api.mcsrvstat.us/bedrock/2/tiger.qbitnode.com:5533").then(r => r.json())
+            fetch("https://api.mcsrvstat.us/3/node-2.banglaverse.net:6001").then(r => r.json()),
+            fetch("https://api.mcsrvstat.us/3/node-2.banglaverse.net:6002").then(r => r.json())
         ])
             .then(([javaData, bedrockData]) => {
                 setJava(javaData);
@@ -75,7 +75,7 @@ const MinecraftStatus = () => {
                     <div className='shadow-2xl rounded-2xl'>
                         {/* JAVA */}
                         <div
-                            onClick={() => copyText("tiger.qbitnode.com:5400")}
+                            onClick={() => copyText("node-2.banglaverse.net:6001")}
                             className='cursor-pointer p-1 rounded-xl'
                         >
                             <div>
@@ -91,10 +91,10 @@ const MinecraftStatus = () => {
                                     </span>
                                     <br />
                                     <span className='text-cyan-400'>
-                                        tiger.qbitnode.com:5400
+                                        node-2.banglaverse.net:6001
                                     </span>
                                 </p>
-                                {copied === "tiger.qbitnode.com:5400" && (
+                                {copied === "node-2.banglaverse.net:6001" && (
                                         <span className="ml-2 text-green-400 text-sm">IP was successfully copied!</span>
                                     )}
                             </div>
@@ -103,7 +103,7 @@ const MinecraftStatus = () => {
                     <div className='shadow-2xl text-start rounded-2xl'>
                         {/* BEDROCK */}
                         <div
-                            onClick={() => copyText("tiger.qbitnode.com:5533")}
+                            onClick={() => copyText("node-2.banglaverse.net:6002")}
                             className='p-1 cursor-pointer rounded-xl'
                         >
                             <p className='flex items-center gap-1 text-base-200 font-mono'>
@@ -118,11 +118,11 @@ const MinecraftStatus = () => {
                                 </span>
                                 <br />
                                 <span className='text-purple-400'>
-                                    tiger.qbitnode.com:5533
+                                    node-2.banglaverse.net:6002
                                 </span>
                                 <br />
                             </p>
-                             {copied === "tiger.qbitnode.com:5533" && (
+                             {copied === "node-2.banglaverse.net:6002" && (
                                     <span className="ml-2 text-green-400 text-sm">IP was successfully copied!</span>
                                 )}
                         </div>
