@@ -70,7 +70,7 @@ const Minecraft = () => {
                 </p>
 
                 <div className='flex flex-wrap gap-3 justify-center mb-0 md:mb-5'>
-                    {[1, 2, 3, 4, 5].map(v => (
+                    {[1, 2, 3 ].map(v => (
                         <motion.div key={v} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
                             <Link
                                 to={`/minecraft/vote${v}`}
