@@ -1,12 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { motion, useScroll } from "motion/react";
 import { Link } from 'react-router';
-import jsmc from '../../assets/minecraft/grass_400px.png';
-import bdmc from '../../assets/minecraft/bedrock_400px.png';
 import mcBg from '../../assets/minecraft/logo_1_400px.png';
 import "./GTE/gradientText.css";
 import MinecraftStatus from './MinecraftStatus';
-import mcbg1 from "../../assets/minecraft/mcbg21.jpg";
 
 const Minecraft = () => {
     // const [copied, setCopied] = useState("");
@@ -61,7 +58,7 @@ const Minecraft = () => {
             <div className='flex justify-center my-5'>
                 <MinecraftStatus></MinecraftStatus>
             </div>
-            
+
             {/* VOTE */}
             <div className='text-center'>
                 <h2 className='text-4xl font-bold text-base-200 mb-3'>Vote Links</h2>
@@ -70,15 +67,30 @@ const Minecraft = () => {
                 </p>
 
                 <div className='flex flex-wrap gap-3 justify-center mb-0 md:mb-5'>
-                    {[1, 2, 3 ].map(v => (
+                    {[1, 2, 3, 4, 5].map(v => (
                         <motion.div key={v} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-                            <Link
-                                to={`/minecraft/vote${v}`}
-                                target='_blank'
-                                className="btn rounded-full bg-blue-950 hover:bg-blue-800 text-white border-2 border-blue-700 font-extrabold capitalize"
-                            >
-                                Vote {v}
-                            </Link>
+
+                            {v === 4 || v === 5 ? (
+
+                                <button
+                                    disabled
+                                    className="btn rounded-full bg-gray-700 text-white border-2 border-gray-600 font-extrabold capitalize cursor-not-allowed opacity-60"
+                                >
+                                    TBA
+                                </button>
+
+                            ) : (
+
+                                <Link
+                                    to={`/minecraft/vote${v}`}
+                                    target="_blank"
+                                    className="btn rounded-full bg-blue-950 hover:bg-blue-800 text-white border-2 border-blue-700 font-extrabold capitalize"
+                                >
+                                    Vote {v}
+                                </Link>
+
+                            )}
+
                         </motion.div>
                     ))}
                 </div>
