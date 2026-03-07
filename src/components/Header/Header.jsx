@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router';
+import { motion } from 'framer-motion';
 import logo from '../../assets/dp_discord_500p.png';
 import { FaDiscord } from 'react-icons/fa';
+
 const Header = () => {
     const links = <>
         <li className='hover:bg-transparent hover:text-gray-400 text-white text-[16px]'><NavLink to={'/'}>Home</NavLink></li>
@@ -10,6 +12,7 @@ const Header = () => {
         <li className='hover:bg-transparent hover:text-gray-400 text-white text-[16px]'><NavLink to={'/staff'}>Staff</NavLink></li>
         <li className='text-[16px] font-bold text-transparent! bg-clip-text bg-gradient-to-r from-red-700 to-red-600 hover:bg-transparent hover:text-gray-400 glow-text'><a href='https://dyno.gg/form/5db81043' target='_blank'>Ban Appeal</a></li>
     </>
+
     return (
         <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur bg-black/60">
             <div className="md:container mx-auto">
@@ -29,13 +32,34 @@ const Header = () => {
                         </ul>
                     </div>
                     <div className="navbar-end hidden md:flex">
-                        <a
+                        <motion.a
                             href="https://discord.gg/bHxmdn7wQg"
                             target="_blank"
-                            className="btn rounded-full bg-blue-950 hover:bg-blue-800 text-white border-2 border-blue-700 font-extrabold capitalize"
+                            className="btn rounded-full bg-blue-950 text-white border-2 border-blue-700 font-extrabold capitalize flex items-center gap-2"
+                            animate={{
+                                boxShadow: [
+                                    '0 0 6px rgba(96,165,250,0.2), 0 0 12px rgba(96,165,250,0.1)',
+                                    '0 0 14px rgba(96,165,250,0.5), 0 0 30px rgba(96,165,250,0.2)',
+                                    '0 0 6px rgba(96,165,250,0.2), 0 0 12px rgba(96,165,250,0.1)',
+                                ],
+                            }}
+                            transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
+                            whileHover={{
+                                scale: 1.06,
+                                backgroundColor: '#1e3a8a',
+                                boxShadow: '0 0 20px rgba(96,165,250,0.6), 0 0 50px rgba(96,165,250,0.25)',
+                                transition: { duration: 0.15 }
+                            }}
+                            whileTap={{ scale: 0.96 }}
                         >
-                            Join Us <FaDiscord size={20} />
-                        </a>
+                            Join Us
+                            <motion.span
+                                animate={{ y: [0, -3, 0] }}
+                                transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+                            >
+                                <FaDiscord size={20} />
+                            </motion.span>
+                        </motion.a>
                     </div>
                     <div className="navbar-end md:hidden">
                         <div className="dropdown dropdown-end">
@@ -55,7 +79,6 @@ const Header = () => {
                                     />
                                 </svg>
                             </label>
-
                             <ul
                                 tabIndex={0}
                                 className="menu menu-sm dropdown-content mt-3 w-52 bg-black/90 rounded-box shadow z-[999]"
@@ -64,11 +87,9 @@ const Header = () => {
                             </ul>
                         </div>
                     </div>
-
                 </div>
             </div>
         </nav>
-
     );
 };
 

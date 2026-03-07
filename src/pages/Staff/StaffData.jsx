@@ -1,26 +1,54 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { useLoaderData } from 'react-router';
 import StaffCard from './StaffCard';
 import { Swiper, SwiperSlide } from 'swiper/react';
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-// import required modules
 import { EffectCoverflow, Pagination, Autoplay } from 'swiper/modules';
 import TeamCard from './TeamCard';
 
 const StaffData = () => {
     const data = useLoaderData();
-    // console.log(data);
-    // const [isVisible, setIsVisible] = useState(false);
+
     return (
         <div className='w-11/12 mx-auto pt-30 pb-20 min-h-screen space-y-4'>
-            <div className='text-center text-base-100 pb-6 '>
-                <h2 className='text-5xl font-extrabold bg-gradient-to-r from-blue-400 to-red-500 bg-clip-text text-transparent'>Our Team</h2>
-            </div>
-            <div className='w-full'>
+            <motion.div
+                className='text-center text-base-100 pb-6'
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.7, ease: 'easeOut' }}
+            >
+                <h2
+                    className='text-5xl font-extrabold bg-clip-text text-transparent'
+                    style={{
+                        backgroundImage: 'linear-gradient(90deg, #60a5fa, #ef4444, #a855f7, #60a5fa)',
+                        backgroundSize: '300% 100%',
+                        animation: 'gradientShift 4s ease infinite',
+                    }}
+                >
+                    Our Team
+                </h2>
+
+                <style>{`
+                    @keyframes gradientShift {
+                        0%   { background-position: 0% 50%;   filter: drop-shadow(0 0 18px rgba(96, 165, 250, 0.2)) drop-shadow(0 0 40px rgba(96, 165, 250, 0.1)); }
+                        50%  { background-position: 100% 50%; filter: drop-shadow(0 0 18px rgba(239, 68, 68, 0.2))  drop-shadow(0 0 40px rgba(168, 85, 247, 0.1)); }
+                        100% { background-position: 0% 50%;   filter: drop-shadow(0 0 18px rgba(96, 165, 250, 0.2)) drop-shadow(0 0 40px rgba(96, 165, 250, 0.1)); }
+                    }
+                `}</style>
+            </motion.div>
+
+            <motion.div
+                className='w-full'
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.8, ease: 'easeOut', delay: 0.15 }}
+            >
                 <Swiper
                     effect="coverflow"
                     grabCursor={true}
@@ -50,37 +78,13 @@ const StaffData = () => {
                         1024: { slidesPerView: 4 },
                     }}
                 >
-                    {
-                        data.map(singleStaff =>
-                            <SwiperSlide key={singleStaff.serialNo} className='w-[260px] transition-all duration-300'>
-                                <StaffCard singleStaff={singleStaff}></StaffCard>
-                            </SwiperSlide>
-                        )}
+                    {data.map(singleStaff =>
+                        <SwiperSlide key={singleStaff.serialNo} className='w-[260px] transition-all duration-300'>
+                            <StaffCard singleStaff={singleStaff} />
+                        </SwiperSlide>
+                    )}
                 </Swiper>
-            </div>
-            {/* <div>
-                <div className='text-center pb-4'>
-                    <button onClick={() => setIsVisible(!isVisible)} className='btn btn-primary rounded-full'>
-                        View Details</button>
-                </div>
-                <div className={`${isVisible ? 'grid' : 'hidden'} grid-cols-1 md:grid-cols-3 gap-4 pt-4`}>
-                    {
-                        data
-                            .slice()
-                            .sort((a, b) => {
-                                const cleanA = a.name.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
-                                const cleanB = b.name.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
-                                return cleanA.localeCompare(cleanB);
-                            })
-                            .map(teamData => (
-                                <TeamCard
-                                    key={teamData.serialNo}
-                                    teamData={teamData}
-                                />
-                            ))
-                    }
-                </div>
-            </div> */}
+            </motion.div>
         </div>
     );
 };
