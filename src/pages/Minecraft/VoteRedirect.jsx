@@ -15,6 +15,7 @@ const links = {
     // 4 & 5 intentionally missing → Error
 };
 
+
 const VoteRedirect = () => {
     const { voteId } = useParams();
     const id = voteId?.replace("vote", "");
