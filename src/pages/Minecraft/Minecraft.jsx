@@ -19,59 +19,88 @@ const Minecraft = () => {
                         src={mcBg}
                         alt="Minecraft Banner"
                         className="rounded-2xl select-none w-[88px] sm:w-[99px] md:w-[110px] relative z-10"
-                        animate={{ y: [0, -18, 0] }}
-                        transition={{
-                            duration: 3,
-                            repeat: Infinity,
-                            ease: "easeInOut"
+                        animate={{
+                            y: [0, -14, 0],
                         }}
+                        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                     />
                     {/* Shadow */}
                     <motion.img
                         src={mcShadow}
                         alt=""
-                        className="select-none w-[88px] sm:w-[99px] md:w-[110px] -mt-6"
+                        className="select-none w-[88px] sm:w-[99px] md:w-[110px] -mt-10"
                         animate={{
-                            y: [0, -6, 0],
-                            opacity: [0.45, 0.15, 0.45],
+                            y: [0, -5, 0],
+                            scaleX: [1.1, 0.88, 1.1],
+                            opacity: [0.6, 0.2, 0.6],
                         }}
-                        transition={{
-                            duration: 3,
-                            repeat: Infinity,
-                            ease: "easeInOut"
-                        }}
+                        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                        style={{ filter: 'blur(10px)' }}
                     />
                 </div>
 
                 {/* RIGHT */}
-                <div className='mb-5'>
-                    <h1
-                        className="text-2xl md:text-4xl font-extrabold mb-4 bg-linear-to-r from-blue-400 via-purple-500 to-red-500 bg-clip-text text-transparent gradient-animate-text"
-                    >
+                <motion.div
+                    className='mb-5'
+                    initial={{ opacity: 0, x: 40 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, ease: 'easeOut', delay: 0.3 }}
+                >
+                    <h1 className="text-2xl md:text-4xl font-extrabold mb-4 bg-linear-to-r from-blue-400 via-purple-500 to-red-500 bg-clip-text text-transparent gradient-animate-text">
                         Survival Minecraft Server
                     </h1>
-
-                    <p className="text-base-200 max-w-[500px] mb-6">
+                    <motion.p
+                        className="text-base-200 max-w-[500px] mb-6"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.5 }}
+                    >
                         A friendly survival Minecraft server with QoL, Bedrock crossplay,
                         minigames, and <span className='font-extrabold text-xl text-yellow-400'>economy</span> synced with our Discord server.
-                    </p>
-                </div>
+                    </motion.p>
+                </motion.div>
             </div>
 
-            <div className='flex justify-center my-5'>
+            <motion.div
+                className='flex justify-center my-5'
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.7, ease: 'easeOut' }}
+            >
                 <MinecraftStatus />
-            </div>
+            </motion.div>
 
             {/* VOTE */}
-            <div className='text-center'>
+            <motion.div
+                className='text-center'
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
+            >
                 <h2 className='text-4xl font-bold text-base-200 mb-3'>Vote Links</h2>
-                <p className='text-base-200 mb-5'>
+                <motion.p
+                    className='text-base-200 mb-5'
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                >
                     Support the server by voting and earn rewards 🎁
-                </p>
+                </motion.p>
 
                 <div className='flex flex-wrap gap-3 justify-center mb-0 md:mb-5'>
-                    {[1, 2, 3, 4, 5].map(v => (
-                        <motion.div key={v} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+                    {[1, 2, 3, 4, 5].map((v, i) => (
+                        <motion.div
+                            key={v}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.4, ease: 'easeOut', delay: i * 0.08 }}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.95 }}
+                        >
                             {v === 4 || v === 5 ? (
                                 <button
                                     disabled
@@ -91,7 +120,7 @@ const Minecraft = () => {
                         </motion.div>
                     ))}
                 </div>
-            </div>
+            </motion.div>
         </div>
     );
 };
