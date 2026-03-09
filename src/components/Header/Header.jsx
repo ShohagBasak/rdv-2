@@ -5,13 +5,23 @@ import logo from '../../assets/dp_discord_500p.png';
 import { FaDiscord } from 'react-icons/fa';
 
 const Header = () => {
+    const links1 = <>
+        <li className='hover:bg-transparent hover:text-gray-400 text-white text-[16px]'><NavLink to={'/minecraft'}>Minecraft IP</NavLink></li>
+        <li className='hover:bg-transparent hover:text-gray-400 text-white text-[16px]'><NavLink to={'/minecraftCalc'}>Build Planner</NavLink></li>
+    </>
     const links = <>
         <li className='hover:bg-transparent hover:text-gray-400 text-white text-[16px]'><NavLink to={'/'}>Home</NavLink></li>
         <li className='hover:bg-transparent hover:text-gray-400 text-white text-[16px]'><NavLink to={'/feature'}>Features</NavLink></li>
-        <li className='hover:bg-transparent hover:text-gray-400 text-white text-[16px]'><NavLink to={'/minecraft'}>Minecraft</NavLink></li>
+        <li className="dropdown dropdown-hover">
+            <div tabIndex={0} role="button" className="hover:bg-transparent hover:text-gray-400 text-white text-[16px] px-4 py-2 cursor-pointer">Minecraft</div>
+            <ul tabIndex="-1" className="dropdown-content menu bg-black/90 rounded-box z-50 w-52 mt-0 pt-2 shadow-sm">
+                {links1}
+            </ul>
+        </li>
         <li className='hover:bg-transparent hover:text-gray-400 text-white text-[16px]'><NavLink to={'/staff'}>Staff</NavLink></li>
         <li className='text-[16px] font-bold text-transparent! bg-clip-text bg-gradient-to-r from-red-700 to-red-600 hover:bg-transparent hover:text-gray-400 glow-text'><a href='https://dyno.gg/form/5db81043' target='_blank'>Ban Appeal</a></li>
     </>
+
 
     return (
         <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur bg-black/60">
@@ -26,11 +36,12 @@ const Header = () => {
                             ⚡Rimel's Discord⚡
                         </Link>
                     </div>
-                    <div className="navbar-center hidden lg:flex">
+                    <div className="navbar-center hidden lg:flex ">
                         <ul className="menu menu-horizontal px-1">
                             {links}
                         </ul>
                     </div>
+
                     <div className="navbar-end hidden md:flex">
                         <motion.a
                             href="https://discord.gg/bHxmdn7wQg"

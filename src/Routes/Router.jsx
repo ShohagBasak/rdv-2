@@ -6,6 +6,7 @@ import TeamData from "../pages/Staff/TeamData";
 import Minecraft from "../pages/Minecraft/Minecraft";
 import VoteRedirect from "../pages/Minecraft/VoteRedirect";
 import Error from "../pages/Error/Error";
+import MinecraftCalc from "../pages/Minecraft/MinecraftCalc";
 
 export const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ export const router = createBrowserRouter([
           {
             path: 'minecraft',
             Component: Minecraft,
+          },
+          {
+            path: 'minecraftCalc',
+            Component: MinecraftCalc
           },
           {
             path: 'staff',
