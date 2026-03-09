@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaRobot } from 'react-icons/fa';
 import { IoClose, IoSend } from 'react-icons/io5';
-import systemPrompt from './systemPrompt';
 
 const ChatBot = () => {
     const [isOpen, setIsOpen] = useState(false);
