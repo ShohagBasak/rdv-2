@@ -13,35 +13,42 @@ const Minecraft = () => {
     return (
         <div className='max-w-11/12 pt-20 mx-auto pb-5 min-h-screen' style={{ scaleX: scrollYProgress }}>
             <div className="flex flex-col md:flex-row items-start md:items-end justify-center gap-5 p-5">
+
                 {/* LEFT - Logo + Shadow */}
                 <div className="mx-auto md:mx-0 w-fit flex flex-col items-center mt-0 md:mt-18 md:-translate-x-8">
-                    {/* Main Logo */}
+
                     {/* Main Logo */}
                     <motion.img
                         src={mcBg}
                         alt="Minecraft Banner"
                         className="rounded-2xl select-none w-[88px] sm:w-[99px] md:w-[110px] relative z-10"
-                        animate={{ y: [0, -18, 0] }}
-                        transition={{
-                            duration: 3,
-                            repeat: Infinity,
-                            ease: "easeInOut"
-                        }}
+                        initial={{ opacity: 0, y: 60, scale: 0.75 }}
+                        animate={introComplete
+                            ? { y: [0, -14, 0], opacity: 1, scale: 1 }
+                            : { opacity: 1, y: 0, scale: 1 }
+                        }
+                        transition={introComplete
+                            ? { duration: 3, repeat: Infinity, ease: 'easeInOut' }
+                            : { duration: 0.8, ease: 'easeOut', delay: 0.2 }
+                        }
+                        onAnimationComplete={() => !introComplete && setIntroComplete(true)}
                     />
+
                     {/* Shadow */}
                     <motion.img
                         src={mcShadow}
                         alt=""
-                        className="select-none w-[88px] sm:w-[99px] md:w-[110px] -mt-6"
-                        animate={{
-                            y: [0, -6, 0],
-                            opacity: [0.45, 0.15, 0.45],
-                        }}
-                        transition={{
-                            duration: 3,
-                            repeat: Infinity,
-                            ease: "easeInOut"
-                        }}
+                        className="select-none w-[88px] sm:w-[99px] md:w-[110px] -mt-10"
+                        initial={{ opacity: 0 }}
+                        animate={introComplete
+                            ? { opacity: [0.65, 0.1, 0.65] }
+                            : { opacity: 0.65 }
+                        }
+                        transition={introComplete
+                            ? { duration: 3, repeat: Infinity, ease: 'easeInOut' }
+                            : { duration: 0.8, ease: 'easeOut', delay: 0.2 }
+                        }
+                        style={{ filter: 'blur(10px)' }}
                     />
                 </div>
 
@@ -67,6 +74,7 @@ const Minecraft = () => {
                 </motion.div>
             </div>
 
+            {/* Minecraft Status */}
             <motion.div
                 className='flex justify-center my-5'
                 initial={{ opacity: 0, y: 40 }}
