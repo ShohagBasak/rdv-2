@@ -1,5 +1,3 @@
-import systemPrompt from "../src/components/ChatBot/systemPrompt";
-
 export default async function handler(req, res) {
     // Allow CORS for local dev
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -40,7 +38,10 @@ export default async function handler(req, res) {
                 model: 'llama-3.3-70b-versatile',
                 max_tokens: 1024,
                 messages: [
-                    { role: 'system', content: systemPrompt },
+                    {
+                        role: 'system',
+                        content: "You are RD Assistant, a helpful AI for Rimel's Discord — a friendly gaming community focused on anime, games, and fun. Keep responses concise and friendly. Use casual language. You can use emojis occasionally."
+                    },
                     ...filteredMessages
                 ],
             }),
