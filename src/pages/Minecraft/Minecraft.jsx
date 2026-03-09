@@ -19,7 +19,7 @@ const Minecraft = () => {
                         src={mcBg}
                         alt="Minecraft Banner"
                         className="rounded-2xl select-none w-[88px] sm:w-[99px] md:w-[110px] relative z-10"
-                        animate={{ y: [0, -18, 0] }}
+                        animate={{ y: [0, 20, 0] }}
                         transition={{
                             duration: 3,
                             repeat: Infinity,
@@ -32,7 +32,7 @@ const Minecraft = () => {
                         alt=""
                         className="select-none w-[88px] sm:w-[99px] md:w-[110px] -mt-6"
                         animate={{
-                            y: [0, -6, 0],
+                            y: [0, -5, 0],
                             opacity: [0.45, 0.15, 0.45],
                         }}
                         transition={{
