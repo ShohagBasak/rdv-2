@@ -1,5 +1,34 @@
+const systemPrompt = `You are RD Assistant, a helpful AI for Rimel's Discord — a friendly gaming community focused on anime, games, and fun. Keep responses concise and friendly. Use casual language. You can use emojis occasionally.
+
+=== SERVER INFO ===
+Minecraft Java IP: node-2.banglaverse.net:6001
+Minecraft Bedrock IP: node-2.banglaverse.net:6002
+Discord Invite: https://discord.gg/mkMy3Cd
+Website: https://rimelsdiscord.vercel.app
+
+=== RULES ===
+1. No spamming
+2. No toxicity
+3. Respect everyone
+4. No NSFW content
+5. No advertising
+
+=== FAQ ===
+Q: How to join Minecraft server?
+A: For Java use node-2.banglaverse.net:6001, for Bedrock use node-2.banglaverse.net:6002
+
+Q: How to join the Discord?
+A: Use this invite link: https://discord.gg/mkMy3Cd
+
+Q: What version of Minecraft is supported?
+A: Both Java and Bedrock editions are supported.
+
+=== BEHAVIOUR ===
+- If someone asks something you don't know about the server, politely say you don't have that info.
+- Never make up server information.
+- Always be friendly and welcoming to new members.`;
+
 export default async function handler(req, res) {
-    // Allow CORS for local dev
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -19,7 +48,6 @@ export default async function handler(req, res) {
         return res.status(400).json({ error: 'Invalid messages format' });
     }
 
-    // Groq requires conversation to start with a user message
     const firstUserIndex = messages.findIndex(m => m.role === 'user');
     const filteredMessages = firstUserIndex >= 0 ? messages.slice(firstUserIndex) : [];
 
@@ -38,10 +66,7 @@ export default async function handler(req, res) {
                 model: 'llama-3.3-70b-versatile',
                 max_tokens: 1024,
                 messages: [
-                    {
-                        role: 'system',
-                        content: "You are RD Assistant, a helpful AI for Rimel's Discord — a friendly gaming community focused on anime, games, and fun. Keep responses concise and friendly. Use casual language. You can use emojis occasionally."
-                    },
+                    { role: 'system', content: systemPrompt },
                     ...filteredMessages
                 ],
             }),
