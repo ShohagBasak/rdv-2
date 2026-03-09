@@ -5,6 +5,7 @@ import Footer from '../../components/Footer/Footer';
 import TitleManager from '../../components/TitleManager/TitleManger';
 import Error from '../Error/Error';
 import Loading from '../Loading';
+import ChatBot from '../../components/ChatBot/ChatBot';
 
 const Root = () => {
     const navigation = useNavigation();
@@ -31,6 +32,7 @@ const Root = () => {
             <footer>
                 <Footer></Footer>
             </footer>
+            <ChatBot />
         </div>
     );
 };
