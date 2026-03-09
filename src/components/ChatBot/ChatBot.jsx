@@ -39,21 +39,13 @@ const ChatBot = () => {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    model: 'llama-3.3-70b-versatile',
-                    max_tokens: 1024,
-                    messages: [
-                        {
-                            role: 'system',
-                            content: systemPrompt
-                        },
-                        ...updatedMessages.map(m => ({ role: m.role, content: m.content }))
-                    ]
+                    messages: updatedMessages.map(m => ({ role: m.role, content: m.content }))
                 }),
             });
 
             const data = await response.json();
             if (!response.ok) throw new Error(data.error?.message || 'API error');
-            const reply = data.choices[0].message.content;
+            const reply = data.reply;
             setMessages(prev => [...prev, { role: 'assistant', content: reply }]);
         } catch (err) {
             setMessages(prev => [...prev, { role: 'assistant', content: "Oops! Couldn't reach the server. Try again!" }]);
@@ -103,8 +95,8 @@ const ChatBot = () => {
                                     className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
                                 >
                                     <div className={`max-w-[80%] px-3 py-2 rounded-2xl text-sm leading-relaxed ${msg.role === 'user'
-                                            ? 'bg-blue-600 text-white rounded-br-sm'
-                                            : 'bg-blue-950 border border-blue-800 text-gray-200 rounded-bl-sm'
+                                        ? 'bg-blue-600 text-white rounded-br-sm'
+                                        : 'bg-blue-950 border border-blue-800 text-gray-200 rounded-bl-sm'
                                         }`}>
                                         {msg.content}
                                     </div>
