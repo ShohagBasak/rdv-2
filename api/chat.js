@@ -12,6 +12,7 @@ Website: https://rimelsdiscord.vercel.app
 3. Respect everyone
 4. No NSFW content
 5. No advertising
+6. Always friendly behaviour
 
 === FAQ ===
 Q: How to join Minecraft server?
