@@ -30,7 +30,7 @@ export const router = createBrowserRouter([
             Component: Minecraft,
           },
           {
-            path: 'minecraftCalc',
+            path: 'minecraftBuildPlanner',
             Component: MinecraftCalc
           },
           {

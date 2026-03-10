@@ -8,15 +8,15 @@ const Header = () => {
     const closeDropdown = () => document.activeElement?.blur();
 
     const links1 = <>
-        <li className='hover:bg-transparent hover:text-gray-400 text-white text-[16px]'><NavLink to={'/minecraft'} onClick={closeDropdown}>Minecraft IP</NavLink></li>
-        <li className='hover:bg-transparent hover:text-gray-400 text-white text-[16px]'><NavLink to={'/minecraftCalc'} onClick={closeDropdown}>Build Planner</NavLink></li>
+        <li className='hover:bg-transparent hover:text-gray-400 text-white text-[16px]'><NavLink to={'/minecraft'} onClick={closeDropdown}>Minecraft Server</NavLink></li>
+        <li className='hover:bg-transparent hover:text-gray-400 text-white text-[16px]'><NavLink to={'/minecraftBuildPlanner'} onClick={closeDropdown}>Build Planner</NavLink></li>
     </>
 
     const links = <>
         <li className='hover:bg-transparent hover:text-gray-400 text-white text-[16px]'><NavLink to={'/'}>Home</NavLink></li>
         <li className='hover:bg-transparent hover:text-gray-400 text-white text-[16px]'><NavLink to={'/feature'}>Features</NavLink></li>
         <li className="dropdown dropdown-hover">
-            <div tabIndex={0} role="button" className="hover:bg-transparent hover:text-gray-400 text-white text-[16px] px-4 py-2 cursor-pointer">Minecraft Server</div>
+            <div tabIndex={0} role="button" className="hover:bg-transparent hover:text-gray-400 text-white text-[16px] px-4 py-2 cursor-pointer">Minecraft</div>
             <ul tabIndex="-1" className="dropdown-content menu bg-black/90 rounded-box z-50 w-52 mt-0 pt-2 shadow-sm">
                 {links1}
             </ul>
