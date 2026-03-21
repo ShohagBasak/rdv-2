@@ -65,7 +65,7 @@ const MinecraftStatus = () => {
                     {/* Online Count */}
                     <div className="mt-2 flex justify-center gap-6 mb-3 md:mb-0">
                         <p className={java?.online ? "text-green-400 text-xl font-bold" : "text-red-400"}>
-                            {java?.online ? "🟢" : "🔴"} Online:{" "}
+                            {java?.online ? "🟢 Online" : "🔴 Offline"}:{" "}
                             {java?.online ? java.players.online : 0}
                         </p>
                     </div>
