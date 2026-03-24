@@ -5,6 +5,7 @@ import Features from "../pages/Features/Features";
 import TeamData from "../pages/Staff/TeamData";
 import Minecraft from "../pages/Minecraft/Minecraft";
 import VoteRedirect from "../pages/Minecraft/VoteRedirect";
+import Loading from "../pages/Loading";
 import Error from "../pages/Error/Error";
 import MinecraftCalc from "../pages/Minecraft/MinecraftCalc";
 
@@ -12,6 +13,7 @@ export const router = createBrowserRouter([
   {
     path: '/',
     element: <Root />,
+    HydrateFallback: Loading,
     children: [
       {
         errorElement: <Error />, 
