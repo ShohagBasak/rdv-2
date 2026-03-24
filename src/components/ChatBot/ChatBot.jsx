@@ -6,7 +6,7 @@ import { IoClose, IoSend } from 'react-icons/io5';
 const ChatBot = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [messages, setMessages] = useState([
-        { role: 'assistant', content: "Hey! I'm Server Owner's girlfriend. Ask me anything! 👾" }
+        { role: 'assistant', content: "Hey! I'm Sabiha. Ask me anything! 👾" }
     ]);
     const [input, setInput] = useState('');
     const [isLoading, setIsLoading] = useState(false);
@@ -161,7 +161,18 @@ const ChatBot = () => {
                             <IoClose size={22} />
                         </motion.span>
                     ) : (
-                        <motion.span key="open" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.15 }}>
+                        <motion.span 
+                            key="open" 
+                            initial={{ rotate: 90, opacity: 0 }} 
+                            animate={{ rotate: 0, opacity: 1 }} 
+                            exit={{ rotate: -90, opacity: 0 }} 
+                            transition={{ duration: 0.15 }}
+                            whileHover={{ 
+                                y: [0, -4, 0],
+                                filter: 'drop-shadow(0 0 8px rgba(96,165,250,0.8))',
+                                transition: { duration: 0.5, repeat: Infinity }
+                            }}
+                        >
                             <FaRobot size={20} />
                         </motion.span>
                     )}

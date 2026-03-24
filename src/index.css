@@ -7,6 +7,11 @@
 
 * {
   font-family: "Manrope", sans-serif;
+  cursor: none !important;
+}
+
+a, button, input, [role="button"] {
+  cursor: none !important;
 }
 
 .glow-text {
